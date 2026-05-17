@@ -1,0 +1,435 @@
+html>
+<html lang="ar">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>مؤسسة المستقبل التعليمية</title>
+<style>
+{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family:Tahoma;
+    direction:rtl;
+    background:#f4f4f4;
+    transition:0.5s;
+    background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f');
+    background-size:cover;
+    background-attachment:fixed;
+}
+.dark-mode{
+    background:#111;
+    color:white;
+}
+.dark-mode .page{
+    background:rgba(20,20,20,0.95);
+    color:white;
+}
+.dark-mode .card{
+    background:#222;
+    color:white;
+}
+.dark-mode input,
+.dark-mode textarea{
+    background:#333;
+    color:white;
+    border:1px solid gray;
+}
+header{
+    background:#004080;
+    color:white;
+    padding:2px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+nav{
+    margin-top:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:10px;
+    font-size:18px;
+    font-weight:bold;
+}
+nav a:hover{
+    color:yellow;
+}
+
+.page{
+    display:none;
+    padding:40px;
+    background:rgba(255,255,255,0.92);
+    margin:20px;
+    border-radius:15px;
+}
+.active{
+    display:block;
+}
+.hero{
+    text-align:center;
+    padding:50px 20px;
+}
+.hero img{
+    width:320px;
+    max-width:100%;
+    border-radius:20px;
+    box-shadow:0 0 20px black;
+}
+
+.hero h2{
+    margin-top:20px;
+    color:#004080;
+}
+button{
+    background:#0080ff;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+    margin-top:10px;
+    font-size:16px;
+    transition:0.3s;
+}
+button:hover{
+    background:#0059b3;
+    transform:scale(1.05);
+}
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+.card{
+    background:white;
+    width:280px;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 0 15px gray;
+    transition:0.4s;
+    text-align:center;
+}
+.card:hover{
+    transform:translateY(-10px);
+}
+.card img{
+    width:100%;
+    height:180px;
+    border-radius:10px;
+    object-fit:cover;
+}
+input,
+textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border-radius:8px;
+    border:1px solid gray;
+    font-size:16px;
+}
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:50px;
+}
+@media(max-width:768px){
+
+    nav a{
+        display:block;
+        margin:10px 0;
+    }
+    .cards{
+        flex-direction:column;
+        align-items:center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>مؤسسة المستقبل التعليمية</h1>
+
+<nav>
+
+<a href="#" onclick="showPage('home')">الرئيسية</a>
+
+<a href="#" onclick="showPage('about')">عن المؤسسة</a>
+
+<a href="#" onclick="showPage('works')">الأعمال</a>
+
+<a href="#" onclick="showPage('programs')">البرامج الحسابية</a>
+
+<a href="#" onclick="showPage('contact')">التواصل</a>
+
+</nav>
+
+<button onclick="toggleDarkMode()">🌙 الوضع الليلي</button>
+
+</header>
+<section id="home" class="page active">
+
+<div class="hero">
+
+<img src="https://images.unsplash.com/photo-1509062522246-3755977927d7">
+
+<h2 id="welcome"></h2>
+
+<p style="margin-top:20px; font-size:18px;">
+مرحباً بكم في مؤسسة المستقبل التعليمية،
+نسعى لنشر المعرفة والتكنولوجيا وبناء جيل متميز.
+</p>
+
+<button onclick="welcomeMessage()">اضغط للترحيب</button>
+
+</div>
+
+</section>
+<section id="about" class="page">
+
+<h1>عن المؤسسة</h1>
+
+<br>
+
+<p>
+مؤسسة تعليمية تهدف إلى تطوير التعليم
+وتقديم خدمات تقنية وبرمجية حديثة للطلاب.
+</p>
+
+<br>
+
+<h2>رؤيتنا</h2>
+
+<p>
+بناء مجتمع متعلم باستخدام أحدث الوسائل التعليمية.
+</p>
+
+<br>
+
+<h2>أهدافنا</h2>
+
+<ul>
+<li>تطوير مهارات الطلاب</li>
+<li>تقديم دورات تقنية</li>
+<li>دعم المشاريع التعليمية</li>
+</ul>
+
+</section>
+
+<section id="works" class="page">
+
+<h1>أعمال المؤسسة</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3">
+
+<h2>دورات برمجة</h2>
+
+<p>دورات في HTML و CSS و JavaScript.</p>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+
+<h2>ورش تقنية</h2>
+
+<p>ورش لتعليم البرمجة والتصميم.</p>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644">
+
+<h2>مشاريع طلابية</h2>
+
+<p>الإشراف على مشاريع التخرج.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="programs" class="page">
+
+<h1>البرامج الحسابية</h1>
+
+<br>
+
+<h2>حساب حجم الأسطوانة</h2>
+
+<input type="number" id="r" placeholder="أدخل نصف القطر">
+
+<input type="number" id="h" placeholder="أدخل الارتفاع">
+
+<button onclick="cylinder()">احسب</button>
+
+<p id="cylinderResult"></p>
+
+<hr><br>
+
+<h2>حساب مساحة الدائرة</h2>
+
+<input type="number" id="radius" placeholder="أدخل نصف القطر">
+
+<button onclick="circle()">احسب</button>
+
+<p id="circleResult"></p>
+
+<hr><br>
+
+<h2>حل معادلات الدرجة الثانية</h2>
+
+<input type="number" id="a" placeholder="a">
+
+<input type="number" id="b" placeholder="b">
+
+<input type="number" id="c" placeholder="c">
+
+<button onclick="quadratic()">حل المعادلة</button>
+
+<p id="quadResult"></p>
+
+</section>
+
+<section id="contact" class="page">
+
+<h1>التواصل مع المؤسسة</h1>
+
+<br>
+
+<form>
+
+<input type="text" placeholder="الاسم">
+
+<input type="email" placeholder="البريد الإلكتروني">
+
+<textarea placeholder="اكتب رسالتك"></textarea>
+
+<button type="submit">إرسال</button>
+
+</form>
+
+</section>
+<footer>
+
+<p>
+</p>
+</footer>
+
+<script>
+function showPage(pageId){
+
+    let pages = document.querySelectorAll(".page");
+
+    pages.forEach(function(page){
+
+        page.classList.remove("active");
+
+    });
+
+    document.getElementById(pageId).classList.add("active");
+}
+function toggleDarkMode(){
+
+    document.body.classList.toggle("dark-mode");
+}
+let userName = prompt("أدخل اسمك");
+
+let now = new Date();
+
+let hour = now.getHours();
+
+let greeting = "";
+
+if(hour >= 5 && hour < 12){
+
+    greeting = "صباح الخير";
+
+}
+else if(hour >= 12 && hour < 4){
+
+    greeting = "نهارك سعيد";
+}
+else{
+
+    greeting = "صباح الخير";
+}
+document.getElementById("welcome").innerHTML =
+
+greeting + " " + userName + " 👋<br>مرحباً بك في مؤسسة المستقبل التعليمية";
+
+function welcomeMessage(){
+
+    alert(greeting + " " + userName);
+}
+function cylinder(){
+
+    let r = document.getElementById("r").value;
+
+    let h = document.getElementById("h").value;
+
+    let volume = 3.14 * r * r * h;
+
+    document.getElementById("cylinderResult").innerHTML =
+
+    "حجم الأسطوانة = " + volume;
+}
+function circle(){
+
+    let radius = document.getElementById("radius").value;
+
+    let area = 3.14 * radius * radius;
+
+    document.getElementById("circleResult").innerHTML =
+
+    "مساحة الدائرة = " + area;
+}
+function quadratic(){
+
+    let a = document.getElementById("a").value;
+
+    let b = document.getElementById("b").value;
+
+    let c = document.getElementById("c").value;
+
+    let d = (b*b) - (4*a*c);
+
+    if(d < 0){
+
+        document.getElementById("quadResult").innerHTML =
+
+        "لا توجد حلول حقيقية";
+    }
+
+    else{
+        let x1 = (-b + Math.sqrt(d)) / (2*a);
+        let x2 = (-b - Math.sqrt(d)) / (2*a);
+        document.getElementById("quadResult").innerHTML =
+        "X1 = " + x1 + "<br>X2 = " + x2;
+    }
+}
+</script>
+
+</body>
+</html>
